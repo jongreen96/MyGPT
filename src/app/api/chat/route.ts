@@ -93,7 +93,6 @@ async function processAttachments(messages: Message[], userId: string) {
 
     await client.send(command);
 
-    // TODO: IMPORTANT! Swap from dev url before release
-    attachment.url = `${process.env.CLOUDFLARE_DEV_URL!}/user-images/${userId}/${attachment.name}`;
+    attachment.url = `${process.env.CLOUDFLARE_URL!}/user-images/${userId}/${attachment.name}`;
   }
 }

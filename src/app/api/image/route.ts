@@ -62,8 +62,7 @@ export async function POST(req: Request) {
       {
         name: Key.split('/').pop(),
         contentType: 'image/png',
-        // TODO: IMPORTANT! Swap from dev url before release
-        url: `${process.env.CLOUDFLARE_DEV_URL!}/${Key}`,
+        url: `${process.env.CLOUDFLARE_URL!}/${Key}`,
       },
     ],
   };
