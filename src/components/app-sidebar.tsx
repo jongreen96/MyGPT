@@ -13,7 +13,13 @@ import {
 } from '@/components/ui/sidebar';
 import { deleteConversation, getConversations } from '@/lib/db';
 import getSession from '@/lib/hooks/get-session';
-import { MessageSquare, MoreHorizontalIcon, SquarePen, X } from 'lucide-react';
+import {
+  MessageSquare,
+  MoreHorizontalIcon,
+  PlusIcon,
+  SquarePen,
+  X,
+} from 'lucide-react';
 import { revalidatePath } from 'next/cache';
 import Link from 'next/link';
 import {
@@ -27,7 +33,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from './ui/alert-dialog';
-import { Button } from './ui/button';
+import { Button, buttonVariants } from './ui/button';
 import {
   Dialog,
   DialogClose,
@@ -90,6 +96,11 @@ export async function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className='-mb-2'>
+        <Link href='/chat/pricing' className={buttonVariants()}>
+          <PlusIcon />
+          Add Credits
+        </Link>
+
         <Separator />
 
         <div>
